@@ -163,7 +163,12 @@ Install dependencies:
 ```bash
 pip install pandas numpy matplotlib scikit-learn
 
+```
+
 Run notebook:
+
+```bash
 
 jupyter notebook Project1_MN_Housing.ipynb
 
+```
