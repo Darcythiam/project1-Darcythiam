@@ -2,16 +2,23 @@
 
 ## Project Overview
 
-This project applies machine learning techniques to predict Minnesota housing prices using demographic and geographic data. The project follows a complete data science workflow including exploratory data analysis, preprocessing, model training, hyperparameter tuning, and performance evaluation.
+This project applies machine learning techniques to predict Minnesota housing prices using demographic and geographic data.
 
-This project demonstrates practical skills in:
+The work is structured in two stages:
 
-- Data cleaning and preprocessing
-- Exploratory Data Analysis (EDA)
-- Feature engineering
-- Machine learning modeling
-- Model evaluation and optimization
-- Data visualization
+- **Baseline Modeling** – data exploration, preprocessing, and initial model training  
+- **Model Improvement & Regularization** – improving generalization using advanced techniques  
+
+Together, these stages demonstrate a complete and iterative machine learning workflow.
+
+---
+
+## Notebooks
+
+| Notebook | Purpose |
+|---|---|
+| `Project1_MN_Housing.ipynb` | Baseline model: EDA, preprocessing, and initial regression models |
+| `Project3_Regularized_Regression_MN_Housing.ipynb` | Extended work: regularization, model tuning, and improved generalization |
 
 ---
 
@@ -19,120 +26,62 @@ This project demonstrates practical skills in:
 
 The dataset contains housing information including:
 
-- Median income
-- Total rooms
-- Total bedrooms
-- Population
-- Households
-- Latitude
-- Longitude
-- Median house value (target variable)
+- Median income  
+- Total rooms  
+- Total bedrooms  
+- Population  
+- Households  
+- Latitude  
+- Longitude  
+- Median house value (target variable)  
 
 The goal is to predict **median house value** using these features.
 
 ---
 
-## Technologies Used
-
-### Programming Language
-
-- Python
-
-### Libraries
-
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-
-### Machine Learning Methods
-
-- Linear Regression
-- Decision Tree Regression
-- Random Forest Regression
-- GridSearchCV
-- Cross Validation
-- Feature Importance Analysis
-
----
-
-## Project Workflow
+## Workflow
 
 ### 1. Exploratory Data Analysis
-
-Explored distributions and relationships between variables using:
-
-- Histograms
-- Scatter plots
-- Correlation matrices
-
-Key finding:
-
-Median income showed the strongest correlation with housing prices.
+- Histograms, scatter plots, correlation analysis  
+- Identified median income as the strongest predictor  
 
 ---
 
 ### 2. Data Preparation
+- Missing value handling  
+- Feature scaling  
+- Feature engineering  
 
-Data preparation included:
-
-- Handling missing values
-- Feature scaling
-- Feature engineering
-- Data transformation
-
-Engineered features included:
-
-- Rooms per household
-- Bedrooms per room
-- Population per household
-
-These features improved model performance.
+Engineered features:
+- Rooms per household  
+- Bedrooms per room  
+- Population per household  
 
 ---
 
 ### 3. Train/Test Split
-
-Used **stratified sampling** based on income categories to maintain representative distributions across training and testing datasets.
-
----
-
-### 4. Model Training
-
-Models trained:
-
-### Linear Regression
-
-Used as baseline model for comparison.
-
-### Decision Tree
-
-Achieved very low training error but showed overfitting.
-
-### Random Forest
-
-Provided the best performance due to reduced variance and improved generalization.
+- Stratified sampling based on income categories  
+- Preserved data distribution  
 
 ---
 
-### 5. Hyperparameter Tuning
-
-Used **GridSearchCV** to optimize:
-
-- Number of estimators
-- Maximum features
-- Tree depth
-
-This improved predictive accuracy.
+### 4. Baseline Models (Project 1)
+- Linear Regression (baseline)  
+- Decision Tree (overfitting observed)  
+- Random Forest (best initial performance)  
 
 ---
 
-### 6. Model Evaluation
+### 5. Model Improvement (Project 3)
+- Regularization techniques to reduce overfitting  
+- Improved generalization performance  
+- Model tuning and refinement  
 
-Models evaluated using:
+---
 
-- Root Mean Squared Error (RMSE)
-- Cross Validation
+### 6. Evaluation
+- Root Mean Squared Error (RMSE)  
+- Cross-validation  
 
 | Model | Result |
 |------|--------|
@@ -140,35 +89,48 @@ Models evaluated using:
 | Decision Tree | Overfit |
 | Random Forest | Best performance |
 
-Random Forest produced the most reliable results.
-
 ---
 
 ### 7. Feature Importance
+Key predictors:
+1. Median income  
+2. Geographic location  
+3. Engineered housing density features  
 
-Most important predictors identified:
-
-1. Median income
-2. Geographic location
-3. Engineered housing density features
-
-Median income was the dominant predictor.
+Median income was the dominant feature.
 
 ---
 
-## Installation
+## Technologies
 
-Install dependencies:
+- Python  
+- Pandas, NumPy  
+- Matplotlib  
+- Scikit-learn  
+
+---
+
+## Key Takeaways
+
+- Feature engineering significantly improves performance  
+- Decision Trees are prone to overfitting without control  
+- Random Forest provides strong baseline performance  
+- Regularization improves model generalization  
+
+---
+
+## Skills Demonstrated
+
+- Regression modeling  
+- Feature engineering  
+- Model evaluation  
+- Cross-validation  
+- Regularization techniques  
+
+---
+
+## Running the Project
 
 ```bash
 pip install pandas numpy matplotlib scikit-learn
-
-```
-
-Run notebook:
-
-```bash
-
 jupyter notebook Project1_MN_Housing.ipynb
-
-```
